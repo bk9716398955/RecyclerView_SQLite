@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FDEFEF"
+    tools:context=".GroceryActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/relative_layout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="5dp">
+
+            <TextView
+                android:id="@+id/Edit_txt_item2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="rasanWala"
+                android:typeface="serif"
+                android:textColor="#F35146"
+                android:textColorHint="@android:color/white"
+                android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/Edit_txt_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Edit_txt_item2"
+                android:hint="item here"
+                android:padding="10dp"
+                android:textColor="#F35146"
+                android:textColorHint="#F35146" />
+
+            <LinearLayout
+                android:id="@+id/linear_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Edit_txt_item"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="#F35146"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="10dp">
+
+                    <ImageButton
+                        android:id="@+id/button_decrement"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@android:color/transparent"
+                        android:elevation="10dp"
+                        android:src="@drawable/ic_remove_white" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/textView_Amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="0"
+                    android:textAlignment="center"
+
+
+                    android:textColor="#F35146"
+
+                    android:textSize="25sp" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="#F35146"
+                    app:cardCornerRadius="5dp"
+                    app:cardElevation="10dp">
+
+                    <ImageButton
+                        android:id="@+id/button_increment"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@android:color/transparent"
+                        android:elevation="10dp"
+                        android:src="@drawable/ic_add_white" />
+                </androidx.cardview.widget.CardView>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="#F35146"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="10dp">
+
+                        <ImageButton
+                            android:id="@+id/button_add_item"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@android:color/transparent"
+                            android:src="@drawable/ic_add_shopping_cart" />
+                    </androidx.cardview.widget.CardView>
+                </RelativeLayout>
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@id/linear_group">
+                <TextView
+                    android:id="@+id/textView_RemoveAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:typeface="serif"
+                    android:textSize="16sp"
+                    android:text="Remove All"
+                    android:textColor="#F35146"/>
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView_Grocery"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/cardBar"
+        android:orientation="horizontal"
+
+        android:scrollbars="none"
+        tools:listitem="@layout/item_grocery">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+</RelativeLayout>
